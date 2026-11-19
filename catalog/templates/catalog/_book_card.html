@@ -1,0 +1,10 @@
+<div class='card{% if not book.rating %} no-rating{% endif %}'>
+    {{ forloop.counter }}.
+    <a href='{% url 'catalog:book_detail' book.id %}'>{{ book.title }}</a>
+    <span class='muted'>— {{ book.author }}, {{ book.year }}</span>
+    {% if book.rating %}
+        <strong>★ {{ book.rating }}</strong>
+    {% else %}
+        <em class='muted'>нет оценок</em>
+    {% endif %}
+</div>

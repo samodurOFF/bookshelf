@@ -1,0 +1,8 @@
+<!-- catalog/templates/catalog/home.html -->
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Добро пожаловать!</h1>
+    <p>
+        Здесь мы собираем книги и отзывы о них. <a href='{% url 'catalog:book_list' %}'>Открыть каталог</a>
+    </p>
+{% endblock %}

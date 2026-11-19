@@ -1,0 +1,60 @@
+/* static/css/style.css */
+body {
+    font-family: system-ui, sans-serif;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: .5rem;
+}
+
+nav a {
+    margin-left: 1rem;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: .75rem 1rem;
+    margin: .5rem 0;
+}
+
+.muted {
+    color: #777;
+}
+
+.messages li {
+    list-style: none;
+    padding: .5rem 1rem;
+    margin: .5rem 0;
+    border-radius: 6px;
+    background: #eef6ff;
+}
+
+.messages li.error {
+    background: #ffeaea;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline button {
+    background: none;
+    border: 0;
+    color: #06c;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+}
+
+.card.no_rating{
+    border-style: dashed;
+    background-color: #d544fd;
+}

@@ -1,0 +1,16 @@
+<!-- catalog/templates/catalog/book_list.html -->
+{% extends 'base.html' %}
+{% block title %}{{ title }}
+{% endblock %}
+{% block content %}
+    <h1>{{ title }}</h1>
+    {% for book in books %}
+        {% include 'catalog/_book_card.html' with book=book %}
+    {% empty %}
+        {% if author %}
+            <p>Книг автора «{{ author }}» не найдено.</p>
+        {% else %}
+            <p>Пока нет ни одной книги.</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
