@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Удалить «{{ book.title }}»?</h1>
+    <form method='post'>{% csrf_token %}
+        <button type='submit'>Да, удалить</button>
+        <a href='{{ book.get_absolute_url }}'>Отмена</a>
+    </form>
+{% endblock %}

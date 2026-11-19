@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.urls import reverse
 
 
 class Genre(models.Model):
@@ -13,6 +14,9 @@ class Genre(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('catalog:genre_detail', kwargs={'pk': self.pk})
+
 
 class Author(models.Model):
     name = models.CharField('имя', max_length=100)
@@ -25,6 +29,10 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('catalog:author_detail', kwargs={'pk': self.pk})
+
 
 class Book(models.Model):
     title = models.CharField('название', max_length=255)
@@ -42,3 +50,6 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('catalog:book_detail', kwargs={'pk': self.pk})

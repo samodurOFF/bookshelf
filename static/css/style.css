@@ -54,7 +54,7 @@ nav a {
     font: inherit;
 }
 
-.card.no_rating{
+.card.no-rating{
     border-style: dashed;
     background-color: #d544fd;
 }

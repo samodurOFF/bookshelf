@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ author.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ author.name }}</h1>
+    <p>{{ author.bio|linebreaksbr|default:'Биография не указана.' }}</p>
+    <h2>Книги</h2>
+    <ul>
+        {% for book in books %}
+            <li><a href='{{ book.get_absolute_url }}'>{{ book.title }}</a>, {{ book.year }}</li>
+        {% empty %}
+            <li>Книг пока нет.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

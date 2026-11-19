@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
-{% block content %}<h1>Жанры</h1>
+
+{% block content %}
+    <h1>Жанры</h1>
     <ul>
         {% for genre in genres %}
-            <li>{{ genre }}</li>
-        {% endfor %}</ul>
+            <li><a href='{% url 'catalog:genre_detail' genre.pk %}'>{{ genre.name }}</a></li>
+        {% endfor %}
+    </ul>
 {% endblock %}

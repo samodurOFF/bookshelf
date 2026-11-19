@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Жанр: {{ genre.name }}</h1>
+  {% for book in books %}
+    <div class='card'><a href='{{ book.get_absolute_url }}'>{{ book.title }}</a> — {{ book.author.name }}</div>
+  {% empty %}
+    <p>В этом жанре пока нет книг.</p>
+  {% endfor %}
+{% endblock %}

@@ -13,4 +13,5 @@
             <p>Пока нет ни одной книги.</p>
         {% endif %}
     {% endfor %}
+    <p><a href='{% url 'catalog:book_create' %}'>Добавить книгу</a></p>
 {% endblock %}
