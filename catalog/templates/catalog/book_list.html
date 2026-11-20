@@ -4,6 +4,16 @@
 {% endblock %}
 {% block content %}
     <h1>{{ title }}</h1>
+    <form method='get'>
+        <input type='search' name='q' value='{{ q }}' placeholder='Название или автор'>
+        <select name='genre'>
+            <option value=''>Все жанры</option>
+            {% for genre in genres %}
+                <option value='{{ genre.pk }}'>{{ genre.name }}</option>{% endfor %}
+        </select>
+        <button type='submit'>Найти</button>
+    </form>
+
     {% for book in books %}
         {% include 'catalog/_book_card.html' with book=book %}
     {% empty %}
@@ -13,5 +23,17 @@
             <p>Пока нет ни одной книги.</p>
         {% endif %}
     {% endfor %}
+    {% if recent_books %}
+        <div class="recent-books">
+            <h1>Недавно просмотренные</h1>
+            <ul>
+                {% for book in recent_books %}
+                    <li>
+                        <a href="{% url 'catalog:book_detail' book.pk %}">{{ book.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
     <p><a href='{% url 'catalog:book_create' %}'>Добавить книгу</a></p>
 {% endblock %}

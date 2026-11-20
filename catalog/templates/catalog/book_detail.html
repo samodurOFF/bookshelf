@@ -8,6 +8,7 @@
     <p>Автор: {{ book.author }}. Год издания: {{ book.year }}. Рейтинг: {{ book.rating }}</p>
     <p>
         <a href='{% url 'catalog:book_list' %}'>← К каталогу</a>
+        <a href='{% url 'catalog:book_create' %}'>Добавить книгу</a>
         <a href='{% url 'catalog:book_update' book.pk %}'>Изменить</a> ·
         <a href='{% url 'catalog:book_delete' book.pk %}'>Удалить</a>
     </p>

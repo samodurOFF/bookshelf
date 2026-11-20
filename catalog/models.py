@@ -43,6 +43,8 @@ class Book(models.Model):
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='добавил', on_delete=models.SET_NULL,
                                    null=True, blank=True, related_name='books_added')
 
+    views_counts = models.PositiveIntegerField('просмотры', default=0, editable=False)
+
     class Meta:
         verbose_name = 'книга'
         verbose_name_plural = 'книги'

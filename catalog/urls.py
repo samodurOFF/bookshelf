@@ -6,8 +6,8 @@ app_name = 'catalog'
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('books/', views.BookListView.as_view(), name='book_list'),
-    path('books/<int:pk>', views.BookDetailView.as_view(), name='book_detail'),
+    path('books/', views.book_list, name='book_list'),
+    path('books/<int:pk>', views.book_detail, name='book_detail'),
     path('about/', views.about, name='about'),
     path('genres/', views.genre_list, name='genre_list'),
     path('books/add/', views.book_create, name='book_create'),
